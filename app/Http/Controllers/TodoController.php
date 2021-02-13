@@ -94,8 +94,13 @@ class TodoController extends Controller
      * @param  \App\Models\todo  $todo
      * @return \Illuminate\Http\Response
      */
-    public function destroy(todo $todo)
+    public function destroy($id)
     {
-        //
+        $todo = todo::find($id);
+        $todo->delete();
+        return response([
+            'status' => 200,
+            'message' => 'todo deleted',
+        ]);
     }
 }
