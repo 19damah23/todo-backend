@@ -21,3 +21,4 @@ use App\Http\Controllers\TodoController;
 
 Route::get('/todos', [TodoController::class, 'index'])->name('todoIndex');
 Route::post('/add-todo', [TodoController::class, 'store'])->name('todoStore');
+Route::put('/update-todo/{id}', [TodoController::class, 'update'])->name('todoUpdate');

@@ -75,9 +75,17 @@ class TodoController extends Controller
      * @param  \App\Models\todo  $todo
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, todo $todo)
+    public function update(Request $request, $id)
     {
-        //
+        $todo = todo::find($id);
+        $todo->title = $request->title;
+        $todo->description = $request->description;
+        $todo->update();
+        return response([
+            'status' => 200,
+            'message' => 'Todo successfully update',
+            'data' => $todo
+        ]);
     }
 
     /**
