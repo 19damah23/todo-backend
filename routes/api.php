@@ -23,3 +23,4 @@ Route::get('/todos', [TodoController::class, 'index'])->name('todoIndex');
 Route::post('/add-todo', [TodoController::class, 'store'])->name('todoStore');
 Route::put('/update-todo/{id}', [TodoController::class, 'update'])->name('todoUpdate');
 Route::delete('/delete-todo/{id}', [TodoController::class, 'destroy'])->name('todoDestroy');
+Route::get('/todo/{id}', [TodoController::class, 'show'])->name('todoShow');

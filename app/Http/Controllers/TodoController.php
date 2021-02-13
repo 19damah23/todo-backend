@@ -52,9 +52,9 @@ class TodoController extends Controller
      * @param  \App\Models\todo  $todo
      * @return \Illuminate\Http\Response
      */
-    public function show(todo $todo)
+    public function show($id)
     {
-        //
+        return response(todo::where('id', $id)->first(), 200);
     }
 
     /**
